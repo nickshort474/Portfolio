@@ -1,16 +1,23 @@
 import React, {Component} from 'react';
-import FifthFrets from './FifthFrets';
 import store from '../../redux/store';
 import constants from '../../redux/constants';
 
+export default class Response extends Component{
 
-export default class Content extends Component{
+	constructor(){
+		super()
+
+		this.state = {
+			errors:[],
+			name:"",
+			message:"",
+			contact:""
+		}
+	}
 
 	componentDidMount(){
 
-		//save page to store
-		store.dispatch({type:constants.SAVE_PAGE,page:'Content'})
-
+		store.dispatch({type:constants.SAVE_PAGE, page:'Response'})
 		// get ref to content container
 		this.element =  document.querySelector('.ContentContainer');
 
@@ -104,28 +111,25 @@ export default class Content extends Component{
         		this.element.removeEventListener('animationend', ()=>{})
 
         		//redirect to home page
-        		
-				this.props.history.push('/Home')
+        		this.props.history.push('/Home')
 
 			})
  		}
  	}
 
  	
+	
+
 	render(){
-		
 		return(
 			<div className="container">
-			    <div className="text-center ContentContainer">
-			   		<p>Here is some of the content I have created</p>
-			   		<p>Hopefully more to come soon!</p>
-			   		<div className="text-left">
-			   			<FifthFrets />
-			   		</div>
-			    </div>
-			</div>	
-				
-			
+				<div className="text-center ContentContainer test">
+					<h3>Thank you for contacting me</h3>
+					<p>I will get in touch asap</p>
+					
+
+				</div>
+			</div>
 		)
 	}
 }

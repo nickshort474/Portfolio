@@ -1,21 +1,29 @@
 <?php 
 	
-
+	
 	$errors = '';
 
 	$myemail = 'nickshort474@gmail.com';
 	
-	if(empty(empty($_POST['name']) || empty($_POST['contact']) ||   empty($_POST['message']))
+	$fromEmail = 'contact@nickshort.info';
+
+	if(empty($_POST['name'])  ||   empty($_POST['email']) ||   empty($_POST['message']))
 	{
 	    $errors .= "\n Error: all fields are required";
 	}
 
-	
-	$name = $_POST['name'];
+	$name = $_POST['name']; 
+	$email_address = $_POST['email']; 
 	$message = $_POST['message']; 
-	$contact = $_POST['contact']; 
 
 	
+	
+
+	if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",	$email_address))
+	{
+	    $errors .= "\n Error: Invalid email address";
+	}
+
 	if(empty($errors))
 	{
 		
@@ -27,18 +35,19 @@
 
 		" Here are the details:\n Name: $name \n ".
 
-		"Email: $contact\n Message \n $message;"
+		"Email: $email_address\n Message \n $message \n ";
 
 		//Headers
 	
-		$headers = "From: $myemail\n";
+		$headers = "From: $fromEmail\n";
 
-		$headers .= "Reply-To: $contact";
+		$headers .= "Reply-To: $email_address";
 
 		if(mail($to,$email_subject,$email_body,$headers)){
 			
-			//redirect to the 'reponse' page
-			header('Location: https://nickshort.info/#/Response');
+			//redirect to the 'thank you' page
+			
+			header('Location: http://nickshort.info/#/Response');
 		}else{
 			echo "something went wrong boo";
 		}
@@ -47,6 +56,7 @@
 
 	}else{
 		echo $errors;
+		
 	}
 	
 

@@ -16,7 +16,7 @@ export default class FifthFrets extends Component{
 	render(){
 		return(
 			<div className="container siteBoxes">
-				<a href="http://www.5thfrets.co.uk/" target="_blank" rel="noopener noreferrer">
+				<a href="http://www.5thfrets.co.uk/"  >
 					<h3>5thFrets.co.uk</h3>
 					<img src={require('../../Assets/Images/5thfrets.jpg')} width="100%"  alt="website snaphot"/>
 					<p>5thFrets guitar repair</p>
@@ -25,3 +25,4 @@ export default class FifthFrets extends Component{
 		)
 	}
 }
+

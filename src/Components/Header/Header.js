@@ -15,6 +15,7 @@ class Header extends Component{
 	}
 
 	componentDidMount(){
+
 		const backButtonElement = document.getElementById("backButton");
 		let backButtonText;
 		let name;
@@ -46,6 +47,16 @@ class Header extends Component{
 		this.unsubscribe = store.subscribe(()=>{
 			
 			let page = store.getState().page;
+			let pageImg;
+
+			if(page === "About"){
+				pageImg = require('../../Assets/Images/About.png')
+			}else if(page === "Home"){
+				pageImg = require('../../Assets/Images/Home.png')
+			}else if(page === "Contact"){
+				pageImg = require('../../Assets/Images/contact.png')
+			}
+
 			let backButtonText = "";
 			let name = "";
 
@@ -64,7 +75,8 @@ class Header extends Component{
 			this.setState({
 				page:page,
 				backButtonText:backButtonText,
-				name:name
+				name:name,
+				pageImg:pageImg
 				
 			}) 
 
@@ -125,7 +137,7 @@ class Header extends Component{
 				<div className="row">
 
 					<h6 id="backButton" onClick={this._goHome.bind(this)} className="col-4 text-left backButton pointer" >{this.state.backButtonText}</h6>
-					<h4 className="col-4 text-center pageTitle">{this.state.page}</h4>
+					<h4 className="col-4 text-center pageTitle"><img src={this.state.pageImg} /></h4>
 					<h6 className="col-4 text-right titleName">{this.state.name}</h6>
 					
 					

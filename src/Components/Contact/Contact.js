@@ -11,11 +11,14 @@ export default class Contact extends Component{
 			errors:[],
 			name:"",
 			message:"",
-			contact:""
+			email:""
 		}
 	}
 
 	componentDidMount(){
+
+		//save page to store
+		store.dispatch({type:constants.SAVE_PAGE,page:'Contact'})
 
 		// get ref to content container
 		this.element =  document.querySelector('.ContentContainer');
@@ -64,12 +67,12 @@ export default class Contact extends Component{
 
         	// record time when finger first makes contact with surface
         	startTime = new Date().getTime() 
-        	e.preventDefault()
+        	//e.preventDefault()
 		})
 
 		//prevent default for touch move
 		this.element.addEventListener('touchmove', (e)=>{
-			e.preventDefault();
+			//e.preventDefault();
 		})
 
 		//add listener for touch end
@@ -89,7 +92,7 @@ export default class Contact extends Component{
 
 			//handle swipe
 			this._handleSwipe(swipeRightBool);
-			e.preventDefault();
+			//e.preventDefault();
 		})
  	}
 
@@ -110,8 +113,7 @@ export default class Contact extends Component{
         		this.element.removeEventListener('animationend', ()=>{})
 
         		//redirect to home page
-        		store.dispatch({type:constants.SAVE_PAGE,page:'Home'})
-				this.props.history.push('/Home')
+        		this.props.history.push('/Home')
 
 			})
  		}
@@ -145,16 +147,20 @@ export default class Contact extends Component{
 			})
 		
 		}else{
+
 			//if no errors submit form
 			var submit = document.getElementById("submit");
 	    	submit.click();
-
+			
 			let form = document.getElementById("form");
 			form.addEventListener("submit",(e) => {
-				// redirect to response page				
+											
 				this.props.history.push('/Response');
 			
 			});
+
+			
+			
 		}
 	}
 
@@ -166,8 +172,8 @@ export default class Contact extends Component{
 		let message = document.getElementById('message');
 		let messageValue = message.value;
 
-		let contact = document.getElementById('contact');
-		let contactValue = contact.value;
+		let email = document.getElementById('email');
+		let emailValue = email.value;
 		
 		
 		//store error messages in array
@@ -187,9 +193,9 @@ export default class Contact extends Component{
 		  
 		}
 
-		if(contactValue.length < 1){
+		if(emailValue.length < 1){
 			errorMsgs.push("Please provide a means for me to contact you");
-			contact.className += ' formError';
+			email.className += ' formError';
 		   
 		}
 	
@@ -206,10 +212,12 @@ export default class Contact extends Component{
 					<p>Or drop me a question with your contact details and I will get back to you</p>
 					
 					<form method="POST" id="form" action="contact_email.php" >
-						Your name<textarea id="name" placeholder="Your name" style={{"width":"100%"}} rows="1" value={this.state.name}  onChange={this._handleInput.bind(this)}></textarea>
-						Your question<textarea id="message" placeholder="Hey there Nick I was wondering..." style={{"width":"100%"}} rows="3" value={this.state.message}  onChange={this._handleInput.bind(this)}></textarea>
-						Your contact<textarea id="contact" placeholder="I can be contacted at..." style={{"width":"100%"}} rows="1" value={this.state.contact} onChange={this._handleInput.bind(this)}></textarea>
-						<input type="submit"  id="submit" style={{display:"none"}}  />
+						
+						Your name<textarea id="name" name="name" placeholder="Your name" style={{"width":"100%"}} rows="1" value={this.state.name}  onChange={this._handleInput.bind(this)} ></textarea>
+						Your question<textarea id="message" name="message" placeholder="Hey there Nick I was wondering..." style={{"width":"100%"}} rows="3" value={this.state.message}  onChange={this._handleInput.bind(this)}></textarea>
+						Your email<textarea id="email" name="email" placeholder="I can be contacted at..." style={{"width":"100%"}} rows="1" value={this.state.email} onChange={this._handleInput.bind(this)}></textarea>
+
+						<input type="submit"  id="submit"  style={{"display":"none"}} />
 
 					</form>
 

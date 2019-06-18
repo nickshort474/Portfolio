@@ -10,7 +10,7 @@ import Content from '../Content/Content';
 import Contact from '../Contact/Contact';
 import Home from '../Home/Home';
 import About from '../About/About';
-
+import Response from '../Response/Response';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,6 +32,7 @@ export default class App extends Component {
 					<Route path={"/Content"} component={Content} />
 					<Route path={"/About"} component={About} />
 					<Route path={"/Contact"} component={Contact} />
+					<Route path={"/Response"} component={Response} />
 					
 				</div>
 

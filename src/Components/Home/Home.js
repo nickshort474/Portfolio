@@ -7,6 +7,8 @@ export default class Home extends Component{
 
 	componentDidMount(){
 
+		store.dispatch({type:constants.SAVE_PAGE,page:'Home'})
+
  		this.element =  document.querySelector('.ContentContainer');
 		this.element.classList.add('animated', 'bounceInLeft')
 		this.element.addEventListener('animationend', () => { 
@@ -41,7 +43,7 @@ export default class Home extends Component{
 			//this._doSomething() 
 			this.element.classList.remove('animated', 'bounceOutLeft')
 			this.props.history.push("/About");
- 			store.dispatch({type:constants.SAVE_PAGE,page:'About'})
+ 			
 		})
  		
  	}
@@ -61,7 +63,7 @@ export default class Home extends Component{
 					</div> <br /> 
 					
 					<div className="row">
-						<span className="col-sm-6"></span><span className="pointer col-sm-6" onClick={this._clickContact.bind(this)}><img src={require('../../Assets/Images/contact.png')} alt="link to my contact detail" /></span>
+						<span className="col-sm-6"></span><span className="pointer col-sm-6" onClick={this._clickContact.bind(this)}><img src={require('../../Assets/Images/GetInContact.png')} alt="link to my contact detail" /></span>
 					</div><br />
 				
 				</div>
