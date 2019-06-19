@@ -7,7 +7,7 @@ export default class Home extends Component{
 
 	componentDidMount(){
 
-		store.dispatch({type:constants.SAVE_PAGE,page:'Home'})
+		store.dispatch({type:constants.SAVE_PAGE,page:'Nick Short Web Dev'})
 
  		this.element =  document.querySelector('.ContentContainer');
 		this.element.classList.add('animated', 'bounceInLeft')
@@ -52,18 +52,22 @@ export default class Home extends Component{
 		return(
 			<div className="container">
 				<div className="text-center ContentContainer">
-					<div>Hi I'm Nick and I develop web sites, apps and more</div><br /><br />
+					<div className="Greeting">
+						<p>Hi I'm Nick<br />I develop web sites, apps and more.</p>
+						
+					</div><br /><br />
 					
 					<div className="row text-center">
-						<span className="pointer col-sm-12" onClick={this._clickContent.bind(this)}><img src={require('../../Assets/Images/creations.png')} alt="link to my creations" /></span>
-					</div><br />
+						<span className="pointer col-sm-12" onClick={this._clickContent.bind(this)}><img className="homeLinks" src={require('../../Assets/Images/creations.png')} alt="link to my creations" /></span>
+					</div>
 					
 					<div className="row">
-						<span className="pointer col-sm-6" onClick={this._clickAbout.bind(this)}><img src={require('../../Assets/Images/learn.png')} alt="link to my about me page" /></span><span className="col-sm-6"></span>
+						<span className="pointer col-sm-6" onClick={this._clickAbout.bind(this)}><img className="homeLinks" src={require('../../Assets/Images/learn.png')} alt="link to my about me page" /></span>
+						<span className="pointer col-sm-6" onClick={this._clickContact.bind(this)}><img className="homeLinks" src={require('../../Assets/Images/GetInContact.png')} alt="link to my contact detail" /></span>
 					</div> <br /> 
 					
 					<div className="row">
-						<span className="col-sm-6"></span><span className="pointer col-sm-6" onClick={this._clickContact.bind(this)}><img src={require('../../Assets/Images/GetInContact.png')} alt="link to my contact detail" /></span>
+						<span className="col-sm-6"></span>
 					</div><br />
 				
 				</div>

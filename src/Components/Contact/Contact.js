@@ -205,17 +205,28 @@ export default class Contact extends Component{
 	render(){
 		return(
 			<div className="container">
-				<div className="text-center ContentContainer test">
-					<h3>Contact</h3>
-					<p>You can contact me at:</p>
-					<p>nickshort474@gmail.com</p>
-					<p>Or drop me a question with your contact details and I will get back to you</p>
-					
+				<div className="ContentContainer contactPage">
+					<hr />
+					<p>You can contact me at: <span className="email">nickshort474@gmail.com</span></p>
+					<hr />
+					<p>Or drop me a question with your contact details and I will get back to you:</p>
+					<hr />
 					<form method="POST" id="form" action="contact_email.php" >
+						<div className="form-group">
+							<label htmlFor="name">Your name</label>
+							<textarea id="name" name="name" className="form-field" placeholder="Your name" style={{"width":"100%"}} rows="1" value={this.state.name}  onChange={this._handleInput.bind(this)} ></textarea>
+						</div>
+						<div className="form-group">
+							<label htmlFor="message">Your question</label>
+							<textarea id="message" name="message" placeholder="Hey there Nick I was wondering..." style={{"width":"100%"}} rows="3" value={this.state.message}  onChange={this._handleInput.bind(this)}></textarea>
+						</div>
+						<div className="form-group">
+							<label htmlFor="email">Your email</label>
+							<textarea id="email" name="email" placeholder="I can be contacted at..." style={{"width":"100%"}} rows="1" value={this.state.email} onChange={this._handleInput.bind(this)}></textarea>
+						</div>
 						
-						Your name<textarea id="name" name="name" placeholder="Your name" style={{"width":"100%"}} rows="1" value={this.state.name}  onChange={this._handleInput.bind(this)} ></textarea>
-						Your question<textarea id="message" name="message" placeholder="Hey there Nick I was wondering..." style={{"width":"100%"}} rows="3" value={this.state.message}  onChange={this._handleInput.bind(this)}></textarea>
-						Your email<textarea id="email" name="email" placeholder="I can be contacted at..." style={{"width":"100%"}} rows="1" value={this.state.email} onChange={this._handleInput.bind(this)}></textarea>
+						
+						
 
 						<input type="submit"  id="submit"  style={{"display":"none"}} />
 
@@ -223,7 +234,7 @@ export default class Contact extends Component{
 
 					<button type="submit" onClick={this._onSubmit.bind(this)}>Contact me</button>
 					<br /><br />
-					<div className="box">
+					<div>
 						{this.state.errors}
 					</div>
 

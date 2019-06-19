@@ -16,27 +16,23 @@ class Header extends Component{
 
 	componentDidMount(){
 
-		const backButtonElement = document.getElementById("backButton");
+		//get reference to left header content
+		const leftElement = document.getElementById("leftElement");
+
+		//get reference to right header element
+		const rightElement = document.getElementById("rightElement");
+
+		//get reference to central element
+		const centralElement = document.getElementById("centralElement");
+
+
 		let backButtonText;
 		let name;
 
 		this.page = store.getState().page;
-		console.log("one")
 		
-		//set variables for when there is a page refresh
-		if(this.page !== "Home"){
-			backButtonElement.classList.add('pointer');
-			backButtonText = "< Back";
-			name = "NickShort";
-			this.allowBackClick = true;
-			console.log("two")
-		}else{
-			backButtonElement.classList.remove('pointer');
-			backButtonText = ""
-			name = ""
-			this.allowBackClick = false;
-			console.log("three")
-		}
+		
+		
 
 		//set state on page refresh
 		this.setState({
@@ -48,34 +44,56 @@ class Header extends Component{
 		//listen for changes to redux when page changes happen
 		this.unsubscribe = store.subscribe(()=>{
 			
+			//get page from state
 			let page = store.getState().page;
 			let pageImg;
 
-			if(page === "About"){
-				pageImg = require('../../Assets/Images/About.png')
-			}else if(page === "Home"){
-				pageImg = require('../../Assets/Images/Home.png')
+			if(page === "Nick Short WebDev"){
+				//pageImg = require('../../Assets/Images/Home.png')
+				leftElement.classList.remove("col-4");
+				rightElement.classList.remove("col-4");
+				centralElement.classList.remove("col-4");
+				centralElement.classList.add("col-12");
+			}else if(page === "About"){
+				//pageImg = require('../../Assets/Images/About.png')
+				leftElement.classList.add("col-4")
+				rightElement.classList.add("col-4")
+				centralElement.classList.remove("col-12");
+				centralElement.classList.add("col-4");
+
 			}else if(page === "Contact"){
-				pageImg = require('../../Assets/Images/contact.png')
+				//pageImg = require('../../Assets/Images/contact.png')
+				leftElement.classList.add("col-4")
+				rightElement.classList.add("col-4")
+				centralElement.classList.remove("col-12");
+				centralElement.classList.add("col-4");
 			}else if(page === "Content"){
-				pageImg = require('../../Assets/Images/Content.png')
+				//pageImg = require('../../Assets/Images/Content.png')
+				leftElement.classList.add("col-4")
+				rightElement.classList.add("col-4")
+				centralElement.classList.remove("col-12");
+				centralElement.classList.add("col-4");
 			}
 
-			let backButtonText = "";
-			let name = "";
 
-			if(page !== "Home"){
-				backButtonElement.classList.add('pointer');
+			
+			//hide pointers and prevent click on home page
+			if(page !== "Nick Short Web Dev"){
+				leftElement.classList.add('pointer');
 				backButtonText = "< Back";
 				name = "NickShort";
 				this.allowBackClick = true;
-
+				
 			}else{
-								
-				backButtonElement.classList.remove('pointer');
+				leftElement.classList.remove('pointer');
+				backButtonText = ""
+				name = ""
 				this.allowBackClick = false;
 				
 			}
+
+
+			//save to state
 			this.setState({
 				page:page,
 				backButtonText:backButtonText,
@@ -85,28 +103,28 @@ class Header extends Component{
 			}) 
 
 			//handle animations
-			const element =  document.querySelector('.pageTitle');
-			element.classList.add('animated', 'fadeIn')
+			//const element =  document.querySelector('#centralElement');
+			centralElement.classList.add('animated', 'fadeIn')
 
-			element.addEventListener('animationend', () => { 
+			centralElement.addEventListener('animationend', () => { 
 				
-			 	element.classList.remove('animated', 'fadeIn')
+			 	centralElement.classList.remove('animated', 'fadeIn')
 			})
 
-			const element2 =  document.querySelector('.backButton');
-			element2.classList.add('animated', 'fadeIn')
+			//const leftElement =  document.querySelector('#leftElement');
+			leftElement.classList.add('animated', 'fadeIn')
 
-			element2.addEventListener('animationend', () => { 
+			leftElement.addEventListener('animationend', () => { 
 				
-			 	element2.classList.remove('animated', 'fadeIn')
+			 	leftElement.classList.remove('animated', 'fadeIn')
 			})
 
-			const element3 =  document.querySelector('.titleName');
-			element3.classList.add('animated', 'fadeIn')
+			//const rightElement =  document.querySelector('#rightElement');
+			rightElement.classList.add('animated', 'fadeIn')
 
-			element3.addEventListener('animationend', () => { 
+			rightElement.addEventListener('animationend', () => { 
 				
-			 	element3.classList.remove('animated', 'fadeIn')
+			 	rightElement.classList.remove('animated', 'fadeIn')
 			})
 
 
@@ -114,6 +132,11 @@ class Header extends Component{
 
 		
 	}
+
+	_assignColValues(){
+
+	}
+
 
 	componentWillUnmount(){
 		this.unsubscribe();
@@ -127,7 +150,7 @@ class Header extends Component{
 				 
 				element.classList.remove('animated', 'bounceOutRight')
 	        	element.removeEventListener('animationend', ()=>{})
-	        	store.dispatch({type:constants.SAVE_PAGE,page:'Home'})
+	        	store.dispatch({type:constants.SAVE_PAGE,page:'Nick Short Web Dev'})
 				this.props.history.push('/Home')
 			})
 		}
@@ -138,11 +161,11 @@ class Header extends Component{
 	render(){
 		return(
 			<div className="header">
-				<div className="row">
+				<div className="row verticalAlign">
 
-					<p id="backButton" onClick={this._goHome.bind(this)} className="col-4 text-left backButton pointer" ><span className="backButton">{this.state.backButtonText}</span></p>
-					<p className="col-4 text-center pageTitleBox"><img className="text-center pageTitle" src={this.state.pageImg} alt={this.state.page}  /></p>
-					<p className="col-4 text-right titleName">{this.state.name}</p>
+					<p id="leftElement" className="col-4 text-left pointer" onClick={this._goHome.bind(this)}>{this.state.backButtonText}</p>
+					<p id="centralElement" className="pageTitleBox text-center"><span className="dropShadow">{this.state.page}</span>{/*<img className="pageTitle" src={this.state.pageImg} alt={this.state.page}  />*/}</p>
+					<p id="rightElement" className="col-4 text-right">{this.state.name}</p>
 					
 					
 				</div>

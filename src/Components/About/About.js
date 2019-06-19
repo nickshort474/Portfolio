@@ -112,15 +112,18 @@ export default class About extends Component{
 	render(){
 		return(
 			<div className="container wrap">
-				<div className="text-center ContentContainer">
+				<div className="text-center ContentContainer About">
 					<p>Hi I'm Nick and I'm a web developer</p>
+					
 					<img src={require("../../Assets/Images/learn.png")} alt="Nick Shorts headshot" />
-					<p>I can develop you the right product to fit your needs. 
-					Looking for a basic website to advertise your business, or maybe something more complex which can handle your data needs, or maybe a progressive web app that can used just like a normal app but is much cheaper to produce and maintain.
-					 I can cater a product to your budget and requirements.</p>
-					 <p>I know a whole host of different technologies each suited to different situations, allowing me to produce you just the right product within your budget.
-					 Incase you're interested, technologies I have worked with include HTML, CSS, JavaScript, ReactJS, Swift, PHP, Node, Phonegap, plus much more. But if there's anything extra you may require I'm happy to discuss your needs.</p>
-					 <p>I live and work in Essex but am willing to travel to come and meet you for a cuppa and a chat. So why not get in touch to discuss what you need and how I can help you.</p>
+					<div className="About">
+						<p>I can develop you the right product to fit your needs. 
+						Looking for a basic website to advertise your business, or maybe something more complex which can handle your data needs, or maybe a progressive web app that can used just like a normal app but is much cheaper to produce and maintain.
+						 I can cater a product to your budget and requirements.</p>
+						 <p>I know a whole host of different technologies each suited to different situations, allowing me to produce you just the right product within your budget.
+						 Incase you're interested, technologies I have worked with include HTML, CSS, JavaScript, ReactJS, Swift, PHP, Node, Phonegap, plus much more. But if there's anything extra you may require I'm happy to discuss your needs.</p>
+						 <p>I live and work in Essex but am willing to travel to come and meet you for a cuppa and a chat. So why not get in touch to discuss what you need and how I can help you.</p>
+					 </div>
 				</div>
 			</div>
 		)
