@@ -21,7 +21,7 @@ class Header extends Component{
 		let name;
 
 		this.page = store.getState().page;
-		
+		console.log("one")
 		
 		//set variables for when there is a page refresh
 		if(this.page !== "Home"){
@@ -29,11 +29,13 @@ class Header extends Component{
 			backButtonText = "< Back";
 			name = "NickShort";
 			this.allowBackClick = true;
+			console.log("two")
 		}else{
 			backButtonElement.classList.remove('pointer');
 			backButtonText = ""
 			name = ""
 			this.allowBackClick = false;
+			console.log("three")
 		}
 
 		//set state on page refresh
@@ -55,6 +57,8 @@ class Header extends Component{
 				pageImg = require('../../Assets/Images/Home.png')
 			}else if(page === "Contact"){
 				pageImg = require('../../Assets/Images/contact.png')
+			}else if(page === "Content"){
+				pageImg = require('../../Assets/Images/Content.png')
 			}
 
 			let backButtonText = "";
@@ -136,9 +140,9 @@ class Header extends Component{
 			<div className="header">
 				<div className="row">
 
-					<h6 id="backButton" onClick={this._goHome.bind(this)} className="col-4 text-left backButton pointer" >{this.state.backButtonText}</h6>
-					<h4 className="col-4 text-center pageTitle"><img src={this.state.pageImg} /></h4>
-					<h6 className="col-4 text-right titleName">{this.state.name}</h6>
+					<p id="backButton" onClick={this._goHome.bind(this)} className="col-4 text-left backButton pointer" ><span className="backButton">{this.state.backButtonText}</span></p>
+					<p className="col-4 text-center pageTitleBox"><img className="text-center pageTitle" src={this.state.pageImg} alt={this.state.page}  /></p>
+					<p className="col-4 text-right titleName">{this.state.name}</p>
 					
 					
 				</div>

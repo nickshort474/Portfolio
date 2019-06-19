@@ -114,7 +114,7 @@ export default class About extends Component{
 			<div className="container wrap">
 				<div className="text-center ContentContainer">
 					<p>Hi I'm Nick and I'm a web developer</p>
-					<img src={require("../../Assets/Images/learn.png")} />
+					<img src={require("../../Assets/Images/learn.png")} alt="Nick Shorts headshot" />
 					<p>I can develop you the right product to fit your needs. 
 					Looking for a basic website to advertise your business, or maybe something more complex which can handle your data needs, or maybe a progressive web app that can used just like a normal app but is much cheaper to produce and maintain.
 					 I can cater a product to your budget and requirements.</p>

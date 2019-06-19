@@ -47,7 +47,7 @@
 			
 			//redirect to the 'thank you' page
 			
-			header('Location: http://nickshort.info/#/Response');
+			//header('Location: http://nickshort.info/#/Response');
 		}else{
 			echo "something went wrong boo";
 		}

@@ -61,3 +61,28 @@ h1{
 .box{
   border: white solid 1px;
 }
+
+
+.pageTitleBox{
+  padding:0px;
+}
+
+.pageTitle{
+  width:100%;
+  min-height:35px;
+  max-width:150px;
+  padding:0px;
+}
+
+.backButton{
+  padding-right:0px;
+  display: flex;
+  align-items: center;
+}
+
+.titleName{
+  padding-left:0px;
+  display: flex;
+  align-items:center;
+  justify-content:flex-end;
+}
