@@ -48,7 +48,7 @@ class Header extends Component{
 			let page = store.getState().page;
 			let pageImg;
 
-			if(page === "Nick Short WebDev"){
+			if(page === "Nick Short Web Dev"){
 				//pageImg = require('../../Assets/Images/Home.png')
 				leftElement.classList.remove("col-4");
 				rightElement.classList.remove("col-4");
@@ -163,7 +163,7 @@ class Header extends Component{
 			<div className="header">
 				<div className="row verticalAlign">
 
-					<p id="leftElement" className="col-4 text-left pointer" onClick={this._goHome.bind(this)}>{this.state.backButtonText}</p>
+					<p id="leftElement" className="col-4 pointer" onClick={this._goHome.bind(this)}>{this.state.backButtonText}</p>
 					<p id="centralElement" className="pageTitleBox text-center"><span className="dropShadow">{this.state.page}</span>{/*<img className="pageTitle" src={this.state.pageImg} alt={this.state.page}  />*/}</p>
 					<p id="rightElement" className="col-4 text-right">{this.state.name}</p>
 					

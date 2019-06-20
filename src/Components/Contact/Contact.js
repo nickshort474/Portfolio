@@ -231,8 +231,9 @@ export default class Contact extends Component{
 						<input type="submit"  id="submit"  style={{"display":"none"}} />
 
 					</form>
-
-					<button type="submit" onClick={this._onSubmit.bind(this)}>Contact me</button>
+					<div className="text-center">
+						<button type="submit" onClick={this._onSubmit.bind(this)}>Contact me</button>
+					</div>
 					<br /><br />
 					<div>
 						{this.state.errors}

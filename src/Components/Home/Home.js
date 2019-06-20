@@ -15,7 +15,9 @@ export default class Home extends Component{
 			
 			this.element.classList.remove('animated', 'bounceInLeft')
 		})
- 	}
+
+
+	}
 
  	_clickContent(){
  		this.element.classList.add('animated','bounceOutLeft');
@@ -48,28 +50,29 @@ export default class Home extends Component{
  		
  	}
 
+ 	_addToHome(){
+ 		
+ 	}
+
 	render(){
 		return(
-			<div className="container">
-				<div className="text-center ContentContainer">
-					<div className="Greeting">
-						<p>Hi I'm Nick<br />I develop web sites, apps and more.</p>
-						
-					</div><br /><br />
+			<div className="container text-center">
+				<div className="ContentContainer">
+					
 					
 					<div className="row text-center">
-						<span className="pointer col-sm-12" onClick={this._clickContent.bind(this)}><img className="homeLinks" src={require('../../Assets/Images/creations.png')} alt="link to my creations" /></span>
+						<span className="pointer col-12 homeLinks" onClick={this._clickContent.bind(this)}>See my creations</span>
 					</div>
 					
 					<div className="row">
-						<span className="pointer col-sm-6" onClick={this._clickAbout.bind(this)}><img className="homeLinks" src={require('../../Assets/Images/learn.png')} alt="link to my about me page" /></span>
-						<span className="pointer col-sm-6" onClick={this._clickContact.bind(this)}><img className="homeLinks" src={require('../../Assets/Images/GetInContact.png')} alt="link to my contact detail" /></span>
-					</div> <br /> 
+						<span className="pointer col-12 homeLinks" onClick={this._clickAbout.bind(this)}>Learn about me</span>
+						
+					</div>
 					
 					<div className="row">
-						<span className="col-sm-6"></span>
-					</div><br />
-				
+						<span className="pointer col-12 homeLinks" onClick={this._clickContact.bind(this)}>Get in touch</span>
+					</div>
+					
 				</div>
 			</div>
 		)

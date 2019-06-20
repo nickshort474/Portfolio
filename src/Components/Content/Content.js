@@ -1,12 +1,27 @@
 import React, {Component} from 'react';
-import FifthFrets from './FifthFrets';
+
 import store from '../../redux/store';
 import constants from '../../redux/constants';
 
+import FifthFrets from './FifthFrets';
+import NewEden from './NewEden';
+import CombatDB from './CombatDB';
 
 export default class Content extends Component{
 
+
+	constructor(){
+		super();
+
+		this.state = {
+			content:<FifthFrets />,
+			arrayPlace:0
+		}
+	}
+
 	componentDidMount(){
+
+		
 
 		//save page to store
 		store.dispatch({type:constants.SAVE_PAGE,page:'Content'})
@@ -111,17 +126,64 @@ export default class Content extends Component{
  		}
  	}
 
+ 	_rotateContent(e){
+ 		let direction = e.target.id;
+ 		let contentArray = [<FifthFrets />,<NewEden />, <CombatDB />];
+ 		let currentPos = this.state.arrayPlace;
+ 		
+		if(direction === "left"){
+			if(currentPos === 0){
+				currentPos = contentArray.length - 1;
+			}else{
+				currentPos -= 1
+			}
+		}else{
+			if(currentPos === contentArray.length - 1){
+				currentPos = 0
+ 			}else{
+ 				currentPos += 1
+ 			}
+			
+		}
+		this.setState ({
+			content:contentArray[currentPos],
+			arrayPlace:currentPos
+		})
+		console.log(currentPos)
+ 	}
+
  	
 	render(){
 		
+		
+
 		return(
 			<div className="container">
-			    <div className="text-center ContentContainer">
-			   		<p>Here is some of the content I have created</p>
-			   		<p>Hopefully more to come soon!</p>
-			   		<div className="text-left">
-			   			<FifthFrets />
+			    <div className="ContentContainer content">
+			   		<div className="row">
+			   			<div className="col-2">
+			   				<img id="left" onClick={this._rotateContent.bind(this)} className="pointer" src={require('../../Assets/Images/prev.png')} alt="previous content"/>
+			   			</div>
+			   			<div className="col-8">
+							{this.state.content}
+			   			</div>
+			   			<div className="col-2">
+			   				<img id="right" onClick={this._rotateContent.bind(this)} className="pointer" src={require('../../Assets/Images/next.png')} alt="next content" />
+			   			</div>
 			   		</div>
+			   		
+			   		
+			   		{/*	<FifthFrets />
+			   		}
+			   		
+			   		<br />
+			   		<div>
+			   			<NewEden />
+			   		</div>
+			   		<br />
+			   		<div>
+			   			<CombatDB />
+			   		</div>*/}
 			    </div>
 			</div>	
 				

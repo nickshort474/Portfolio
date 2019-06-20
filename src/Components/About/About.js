@@ -111,12 +111,13 @@ export default class About extends Component{
 
 	render(){
 		return(
-			<div className="container wrap">
-				<div className="text-center ContentContainer About">
-					<p>Hi I'm Nick and I'm a web developer</p>
-					
-					<img src={require("../../Assets/Images/learn.png")} alt="Nick Shorts headshot" />
-					<div className="About">
+			<div className="container text-center">
+				<div className="ContentContainer About">
+					<div className="Greeting row">
+						<p className="col-9 verticalAlign">Hi I'm Nick<br /> I develop web sites, apps and more.</p>
+						<p className="col-3"><img src={require('../../Assets/Images/profilePic.png')} className="profileImage" alt="profile headshot"  /></p>
+					</div>	
+					<div className="row">
 						<p>I can develop you the right product to fit your needs. 
 						Looking for a basic website to advertise your business, or maybe something more complex which can handle your data needs, or maybe a progressive web app that can used just like a normal app but is much cheaper to produce and maintain.
 						 I can cater a product to your budget and requirements.</p>

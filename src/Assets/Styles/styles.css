@@ -8,9 +8,8 @@ html {
 
 body {
   font: 14px/1 sans-serif;
-  color:black;
-  background-image:linear-gradient(to bottom, silver, grey);
-  /*background-image:linear-gradient(to top,grey, cyan,lightcyan);*/
+  color:dimgrey;
+  background-color:black;
   margin-bottom: 60px;
   margin:10px;
   overflow: hidden;
@@ -20,9 +19,9 @@ body {
 
 #app{
   
-   background-image:linear-gradient(to bottom,black, black,darkgrey);
+   background-image:linear-gradient(to bottom,black, black, dimgrey);
    height:100%;
-   /*background-color:black;*/
+   
 }
 
 h1{
@@ -37,19 +36,23 @@ h1{
 .ContentContainer{
     color:white;
     padding:5px;
-    /*background-color: rgba(0,0,0,0.2);*/
     margin:10px 0px;
+    text-align: center;
+}
+
+.container{
+  max-width:750px;
 }
 
 .header{
-  /*  background-image:linear-gradient(to bottom, grey, grey, grey, light-grey);*/
-  background-color:silver;
- /*background-image:linear-gradient(to bottom right,grey, lightcyan);*/
-}
+  
+  background-color:black;
+ }
 
 .siteBoxes{
-    background-color: rgba(0,0,0,0.2);
-    width:75%;
+    background-color: rgba(255,255,255,0.2);
+    width:100%;
+    margin:0px;
 }
 
 .formError{
@@ -58,18 +61,24 @@ h1{
   border-style: solid;
 }
 
-.box{
-  border: white solid 1px;
-}
 
 .homeLinks{
-  margin:10px;
+  color:silver;
+  margin-top:30px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: 2px 2px rgba(255,0,0,0.5);
+}
+
+.homeLinks:hover{
+  text-shadow: 2px 2px rgba(0,0,0,0);
 }
 
 .Greeting{
   font-size:16px;
-  text-align: center;
   font-family: 'Actor', sans-serif;
+
 }
 
 .pageTitleBox{
@@ -88,30 +97,39 @@ h1{
   font-size: 15px;
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
+  text-shadow: 2px 2px rgba(255,0,0,0.3);
 }
 
 #rightElement{
   font-size: 15px;
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
+  text-shadow: 2px 2px rgba(255,0,0,0.3);
 }
 
 #centralElement{
  
   font-size:29px;
   font-family: 'Righteous', cursive;
+
 }
 
 
 .About{
   font-size:16px;
-  text-align: justify;
+  text-align: left;
   font-family: 'Actor', sans-serif;
+  
 }
 
-.dropShadow{
-   text-shadow: 2px 2px rgba(0,0,0,0.2);
+.profileImage{
+  
+  width:100%;
+  max-width:100px;
+
+  
 }
+
 
 .contactPage{
   font-size:16px;
@@ -121,4 +139,33 @@ h1{
 
 .email{
    font-family: 'Righteous', cursive;
+}
+
+
+.content{
+  font-size:16px;
+  font-family: 'Actor', sans-serif;
+}
+
+.contentArrows{
+  
+  
+}
+
+#left{
+  padding-right:100%;
+}
+
+#right{
+  padding-left:70%;
+  
+}
+
+.siteLinks{
+  color:silver;
+}
+
+.siteLinks:hover{
+  text-decoration:none;
+  color:dimgrey;
 }
