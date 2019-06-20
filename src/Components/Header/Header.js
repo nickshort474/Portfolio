@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import store from '../../redux/store';
-import constants from '../../redux/constants';
+
 
 class Header extends Component{
 
@@ -9,8 +9,7 @@ class Header extends Component{
 		super();
 		this.state = {
 			backButtonText:"",
-			page:"",
-			name:""
+			page:" "
 		}
 	}
 
@@ -22,72 +21,36 @@ class Header extends Component{
 		//get reference to right header element
 		const rightElement = document.getElementById("rightElement");
 
-		//get reference to central element
-		const centralElement = document.getElementById("centralElement");
-
-
+		
 		let backButtonText;
-		let name;
-
-		this.page = store.getState().page;
-		
-		
 		
 
-		//set state on page refresh
+		/*//set state on page refresh
 		this.setState({
 			backButtonText:backButtonText,
-			name:name,
 			page:this.page
-		}) 
+		}) */
 
 		//listen for changes to redux when page changes happen
 		this.unsubscribe = store.subscribe(()=>{
 			
 			//get page from state
 			let page = store.getState().page;
+			console.log(page);
+			
 			let pageImg;
 
-			if(page === "Nick Short Web Dev"){
-				//pageImg = require('../../Assets/Images/Home.png')
-				leftElement.classList.remove("col-4");
-				rightElement.classList.remove("col-4");
-				centralElement.classList.remove("col-4");
-				centralElement.classList.add("col-12");
-			}else if(page === "About"){
-				//pageImg = require('../../Assets/Images/About.png')
-				leftElement.classList.add("col-4")
-				rightElement.classList.add("col-4")
-				centralElement.classList.remove("col-12");
-				centralElement.classList.add("col-4");
-
-			}else if(page === "Contact"){
-				//pageImg = require('../../Assets/Images/contact.png')
-				leftElement.classList.add("col-4")
-				rightElement.classList.add("col-4")
-				centralElement.classList.remove("col-12");
-				centralElement.classList.add("col-4");
-			}else if(page === "Content"){
-				//pageImg = require('../../Assets/Images/Content.png')
-				leftElement.classList.add("col-4")
-				rightElement.classList.add("col-4")
-				centralElement.classList.remove("col-12");
-				centralElement.classList.add("col-4");
-			}
-
-
+	
 			
 			//hide pointers and prevent click on home page
-			if(page !== "Nick Short Web Dev"){
+			if(page !== null){
 				leftElement.classList.add('pointer');
 				backButtonText = "< Back";
-				name = "NickShort";
 				this.allowBackClick = true;
 				
 			}else{
 				leftElement.classList.remove('pointer');
-				backButtonText = ""
-				name = ""
+				backButtonText = "";
 				this.allowBackClick = false;
 				
 			}
@@ -97,19 +60,12 @@ class Header extends Component{
 			this.setState({
 				page:page,
 				backButtonText:backButtonText,
-				name:name,
 				pageImg:pageImg
 				
 			}) 
-
+			console.log("second")
 			//handle animations
-			//const element =  document.querySelector('#centralElement');
-			centralElement.classList.add('animated', 'fadeIn')
-
-			centralElement.addEventListener('animationend', () => { 
-				
-			 	centralElement.classList.remove('animated', 'fadeIn')
-			})
+			
 
 			//const leftElement =  document.querySelector('#leftElement');
 			leftElement.classList.add('animated', 'fadeIn')
@@ -133,16 +89,15 @@ class Header extends Component{
 		
 	}
 
-	_assignColValues(){
-
-	}
-
-
+	
 	componentWillUnmount(){
 		this.unsubscribe();
 	}
 
 	_goHome(){
+
+		console.log("go home");
+
 		if(this.allowBackClick){
 			const element =  document.querySelector('.ContentContainer');
 			element.classList.add('animated', 'bounceOutRight')
@@ -150,7 +105,7 @@ class Header extends Component{
 				 
 				element.classList.remove('animated', 'bounceOutRight')
 	        	element.removeEventListener('animationend', ()=>{})
-	        	store.dispatch({type:constants.SAVE_PAGE,page:'Nick Short Web Dev'})
+	        	//store.dispatch({type:constants.SAVE_PAGE,page:' '})
 				this.props.history.push('/Home')
 			})
 		}
@@ -163,10 +118,8 @@ class Header extends Component{
 			<div className="header">
 				<div className="row verticalAlign">
 
-					<p id="leftElement" className="col-4 pointer" onClick={this._goHome.bind(this)}>{this.state.backButtonText}</p>
-					<p id="centralElement" className="pageTitleBox text-center"><span className="dropShadow">{this.state.page}</span>{/*<img className="pageTitle" src={this.state.pageImg} alt={this.state.page}  />*/}</p>
-					<p id="rightElement" className="col-4 text-right">{this.state.name}</p>
-					
+					<p id="leftElement" className="col-6 text-center pointer" onClick={this._goHome.bind(this)}>{this.state.backButtonText}</p>
+					<p id="rightElement" className="col-6 text-center">{this.state.page}</p>
 					
 				</div>
 			</div>

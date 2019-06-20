@@ -6,7 +6,7 @@ export default class NewEden extends Component{
 
 	render(){
 		return(
-			<div className="container siteBoxes">
+			<div className="container">
 				<a href="http://www.NewEden.co.uk/" className="siteLinks" >
 					<h5>NewEden Florists</h5>
 					<img src={require('../../Assets/Images/NewEdenSmall.png')} width="100%"  alt="website snaphot"/>

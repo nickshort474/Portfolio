@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 
 import Header from '../Header/Header';
-
-
+import Brand from '../Brand/Brand';
+import Footer from '../Footer/Footer';
 
 
 import Content from '../Content/Content';
@@ -25,15 +25,15 @@ export default class App extends Component {
 		return(
 			<Router>
 				<div className="mainContainer">
+					<Brand />
 					<Header />
-					
 					<Route exact path={"/"} component={Home} />
 					<Route path={'/Home'} component={Home} />
 					<Route path={"/Content"} component={Content} />
 					<Route path={"/About"} component={About} />
 					<Route path={"/Contact"} component={Contact} />
 					<Route path={"/Response"} component={Response} />
-					
+					<Footer />
 				</div>
 
 			</Router>

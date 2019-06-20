@@ -4,10 +4,10 @@ import constants from '../../redux/constants';
 
 export default class About extends Component{
 
-		componentDidMount(){
+	componentDidMount(){
 
 		//save page to store
-		store.dispatch({type:constants.SAVE_PAGE,page:'About'})
+		store.dispatch({type:constants.SAVE_PAGE,page:'About me'})
 
 		// get ref to content container
 		this.element =  document.querySelector('.ContentContainer');
@@ -114,17 +114,21 @@ export default class About extends Component{
 			<div className="container text-center">
 				<div className="ContentContainer About">
 					<div className="Greeting row">
-						<p className="col-9 verticalAlign">Hi I'm Nick<br /> I develop web sites, apps and more.</p>
-						<p className="col-3"><img src={require('../../Assets/Images/profilePic.png')} className="profileImage" alt="profile headshot"  /></p>
+						<div className="col-sm-9">
+							<p>Hi I'm Nick and I develop web sites, apps and more.</p>
+							<p>I can develop you the right product to fit your needs. 
+							Looking for a basic website to advertise your business, or maybe something more complex which can handle your data needs, or maybe a progressive web app that can used just like a normal app but is much cheaper to produce and maintain.
+							 I can cater a product to your budget and requirements.</p>
+							 <p>I know a whole host of different technologies each suited to different situations, allowing me to produce you just the right product within your budget.
+							 Incase you're interested, technologies I have worked with include HTML, CSS, JavaScript, ReactJS, Swift, PHP, Node, Phonegap, plus much more. But if there's anything extra you may require I'm happy to discuss your needs.</p>
+							 <p>I live and work in Essex but am willing to travel to come and meet you for a cuppa and a chat. So why not get in touch to discuss what you need and how I can help you.</p>
+						</div>
+
+						<div className="col-sm-3 text-center">
+							<img src={require('../../Assets/Images/profilePic.png')} className="profileImage" alt="profile headshot"  />
+						</div>
 					</div>	
-					<div className="row">
-						<p>I can develop you the right product to fit your needs. 
-						Looking for a basic website to advertise your business, or maybe something more complex which can handle your data needs, or maybe a progressive web app that can used just like a normal app but is much cheaper to produce and maintain.
-						 I can cater a product to your budget and requirements.</p>
-						 <p>I know a whole host of different technologies each suited to different situations, allowing me to produce you just the right product within your budget.
-						 Incase you're interested, technologies I have worked with include HTML, CSS, JavaScript, ReactJS, Swift, PHP, Node, Phonegap, plus much more. But if there's anything extra you may require I'm happy to discuss your needs.</p>
-						 <p>I live and work in Essex but am willing to travel to come and meet you for a cuppa and a chat. So why not get in touch to discuss what you need and how I can help you.</p>
-					 </div>
+					
 				</div>
 			</div>
 		)

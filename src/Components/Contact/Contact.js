@@ -18,8 +18,9 @@ export default class Contact extends Component{
 	componentDidMount(){
 
 		//save page to store
-		store.dispatch({type:constants.SAVE_PAGE,page:'Contact'})
+		store.dispatch({type:constants.SAVE_PAGE,page:'Contact me'})
 
+		console.log("page set to contact me")
 		// get ref to content container
 		this.element =  document.querySelector('.ContentContainer');
 

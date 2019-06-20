@@ -15,8 +15,11 @@ export default class Content extends Component{
 
 		this.state = {
 			content:<FifthFrets />,
-			arrayPlace:0
+			arrayPlace:0,
+			contentDescription:"A guitar repair website"
 		}
+		this.contentArray = [<FifthFrets />,<NewEden />, <CombatDB />];
+		this.contentDescription = ["A guitar repair website", "A florists", "A martial arts utility"]
 	}
 
 	componentDidMount(){
@@ -24,7 +27,7 @@ export default class Content extends Component{
 		
 
 		//save page to store
-		store.dispatch({type:constants.SAVE_PAGE,page:'Content'})
+		store.dispatch({type:constants.SAVE_PAGE, page:'My creations'})
 
 		// get ref to content container
 		this.element =  document.querySelector('.ContentContainer');
@@ -128,17 +131,18 @@ export default class Content extends Component{
 
  	_rotateContent(e){
  		let direction = e.target.id;
- 		let contentArray = [<FifthFrets />,<NewEden />, <CombatDB />];
+ 		
+
  		let currentPos = this.state.arrayPlace;
  		
 		if(direction === "left"){
 			if(currentPos === 0){
-				currentPos = contentArray.length - 1;
+				currentPos = this.contentArray.length - 1;
 			}else{
 				currentPos -= 1
 			}
 		}else{
-			if(currentPos === contentArray.length - 1){
+			if(currentPos === this.contentArray.length - 1){
 				currentPos = 0
  			}else{
  				currentPos += 1
@@ -146,8 +150,9 @@ export default class Content extends Component{
 			
 		}
 		this.setState ({
-			content:contentArray[currentPos],
-			arrayPlace:currentPos
+			content:this.contentArray[currentPos],
+			arrayPlace:currentPos,
+			contentDescription:this.contentDescription[currentPos]
 		})
 		console.log(currentPos)
  	}
@@ -160,12 +165,14 @@ export default class Content extends Component{
 		return(
 			<div className="container">
 			    <div className="ContentContainer content">
+			   		
 			   		<div className="row">
 			   			<div className="col-2">
 			   				<img id="left" onClick={this._rotateContent.bind(this)} className="pointer" src={require('../../Assets/Images/prev.png')} alt="previous content"/>
 			   			</div>
-			   			<div className="col-8">
+			   			<div className="col-8 sites">
 							{this.state.content}
+							{this.state.contentDescription}
 			   			</div>
 			   			<div className="col-2">
 			   				<img id="right" onClick={this._rotateContent.bind(this)} className="pointer" src={require('../../Assets/Images/next.png')} alt="next content" />
@@ -173,17 +180,6 @@ export default class Content extends Component{
 			   		</div>
 			   		
 			   		
-			   		{/*	<FifthFrets />
-			   		}
-			   		
-			   		<br />
-			   		<div>
-			   			<NewEden />
-			   		</div>
-			   		<br />
-			   		<div>
-			   			<CombatDB />
-			   		</div>*/}
 			    </div>
 			</div>	
 				

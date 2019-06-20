@@ -36,6 +36,7 @@ h1{
 .ContentContainer{
     color:white;
     padding:5px;
+    padding-top:25px;
     margin:10px 0px;
     text-align: center;
 }
@@ -48,6 +49,16 @@ h1{
   
   background-color:black;
  }
+
+.brand{
+  width:100%;
+  max-width:400px;
+}
+
+.horizontalRule{
+  border-top:1px solid dimgrey;
+  margin-top: 0px;
+}
 
 .siteBoxes{
     background-color: rgba(255,255,255,0.2);
@@ -64,15 +75,28 @@ h1{
 
 .homeLinks{
   color:silver;
-  margin-top:30px;
+  margin-top:50px;
   font-size: 28px;
   font-weight: bold;
   font-family: 'Rock Salt', cursive;
-  text-shadow: 2px 2px rgba(255,0,0,0.5);
+ 
 }
 
 .homeLinks:hover{
-  text-shadow: 2px 2px rgba(0,0,0,0);
+  color:dimgrey; 
+}
+
+.homeIcon1{
+    padding-top:5px;
+   padding-left:15px;
+}
+
+.homeIcon2{
+   padding-right:15px;
+}
+
+.homeIcon3{
+   padding-left:15px;
 }
 
 .Greeting{
@@ -80,11 +104,6 @@ h1{
   font-family: 'Actor', sans-serif;
 
 }
-
-.pageTitleBox{
-  padding:0px;
-}
-
 
 .verticalAlign{
   display: flex;
@@ -94,31 +113,33 @@ h1{
 }
 
 #leftElement{
-  font-size: 15px;
+  color:white;
+  font-size: 19px;
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
-  text-shadow: 2px 2px rgba(255,0,0,0.3);
+  /*;*/
+}
+
+#leftElement:hover{
+  text-shadow: 2px 2px rgba(255,0,0,0.5);
 }
 
 #rightElement{
-  font-size: 15px;
+  color:white;
+  font-size: 19px;
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
-  text-shadow: 2px 2px rgba(255,0,0,0.3);
+  /*text-shadow: 2px 2px rgba(255,0,0,0.3);*/
 }
 
-#centralElement{
- 
-  font-size:29px;
-  font-family: 'Righteous', cursive;
 
-}
 
 
 .About{
   font-size:16px;
   text-align: left;
   font-family: 'Actor', sans-serif;
+
   
 }
 
@@ -147,13 +168,10 @@ h1{
   font-family: 'Actor', sans-serif;
 }
 
-.contentArrows{
-  
-  
-}
+
 
 #left{
-  
+
   padding-top:100%;
   padding-right:100%;
 }
@@ -165,10 +183,23 @@ h1{
 }
 
 .siteLinks{
-  color:silver;
+  color:white;
 }
 
 .siteLinks:hover{
   text-decoration:none;
   color:dimgrey;
 }
+
+.siteBox{
+  border:1px solid white;
+}
+
+.footer{
+  background-color:black;
+  position:absolute;
+  height:20px;
+  width:100%;
+  bottom: 0px;
+}
+
