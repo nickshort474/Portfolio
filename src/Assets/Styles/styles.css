@@ -153,10 +153,13 @@ h1{
 }
 
 #left{
+  
+  padding-top:100%;
   padding-right:100%;
 }
 
 #right{
+  padding-top:100%;
   padding-left:70%;
   
 }

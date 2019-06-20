@@ -9,7 +9,7 @@ export default class FifthFrets extends Component{
 			<div className="container siteBoxes">
 				<a href="http://www.5thfrets.co.uk/" className="siteLinks">
 					<h5>5thFrets guitar repair</h5>
-					<img src={require('../../Assets/Images/5thfrets.jpg')} width="100%"  alt="website snaphot"/>
+					<img src={require('../../Assets/Images/5thfretsSmall.png')} width="100%"  alt="website snaphot"/>
 					<br /><br />
 				</a>
 			</div>
