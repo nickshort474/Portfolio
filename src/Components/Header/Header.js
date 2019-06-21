@@ -25,12 +25,6 @@ class Header extends Component{
 		let backButtonText;
 		
 
-		/*//set state on page refresh
-		this.setState({
-			backButtonText:backButtonText,
-			page:this.page
-		}) */
-
 		//listen for changes to redux when page changes happen
 		this.unsubscribe = store.subscribe(()=>{
 			
@@ -63,11 +57,8 @@ class Header extends Component{
 				pageImg:pageImg
 				
 			}) 
-			console.log("second")
-			//handle animations
 			
-
-			//const leftElement =  document.querySelector('#leftElement');
+			//handle animations
 			leftElement.classList.add('animated', 'fadeIn')
 
 			leftElement.addEventListener('animationend', () => { 
@@ -75,7 +66,7 @@ class Header extends Component{
 			 	leftElement.classList.remove('animated', 'fadeIn')
 			})
 
-			//const rightElement =  document.querySelector('#rightElement');
+			
 			rightElement.classList.add('animated', 'fadeIn')
 
 			rightElement.addEventListener('animationend', () => { 

@@ -2,7 +2,7 @@
 html {
   position: relative;
   margin:0;
-  overflow: hidden-x;
+  overflow:hidden;
   height:100%;
 }
 
@@ -12,7 +12,7 @@ body {
   background-color:black;
   margin-bottom: 60px;
   margin:10px;
-  overflow: hidden;
+  /*overflow:hidden-x;*/
   height:100%;
  
 }
@@ -34,6 +34,14 @@ h1{
 }
 
 .ContentContainer{
+    color:white;
+    padding:5px;
+    padding-top:25px;
+    margin:10px 0px;
+    text-align: center;
+}
+
+.ContentContainerHigher{
     color:white;
     padding:5px;
     padding-top:25px;
@@ -84,6 +92,7 @@ h1{
 
 .homeLinks:hover{
   color:dimgrey; 
+  
 }
 
 .homeIcon1{
@@ -198,8 +207,37 @@ h1{
 .footer{
   background-color:black;
   position:absolute;
-  height:20px;
+  height:30px;
   width:100%;
-  bottom: 0px;
+  bottom:-10px;
 }
 
+.footerLinks{
+  color:grey;
+  padding-left:15px;
+  
+  
+}
+
+.footerLinks:hover{
+    text-decoration: none;
+    color:red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.testClass{
+  width:500px;
+}

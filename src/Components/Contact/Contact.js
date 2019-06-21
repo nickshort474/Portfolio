@@ -207,7 +207,6 @@ export default class Contact extends Component{
 		return(
 			<div className="container">
 				<div className="ContentContainer contactPage">
-					<hr />
 					<p>You can contact me at: <span className="email">nickshort474@gmail.com</span></p>
 					<hr />
 					<p>Or drop me a question with your contact details and I will get back to you:</p>

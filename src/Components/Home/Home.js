@@ -25,7 +25,7 @@ export default class Home extends Component{
 			
 			this.element.classList.remove('animated', 'bounceOutLeft')
  			this.props.history.push("/Content");
- 			/*store.dispatch({type:constants.SAVE_PAGE,page:'Content'})*/
+ 			
  		})
  	}
 
@@ -35,14 +35,14 @@ export default class Home extends Component{
 			
 			this.element.classList.remove('animated', 'bounceOutLeft')
 			this.props.history.push("/Contact");
-			/*store.dispatch({type:constants.SAVE_PAGE,page:'Contact'})*/
+			
 		})
  	}
 
  	_clickAbout(){
  		this.element.classList.add('animated','bounceOutLeft');
  		this.element.addEventListener('animationend', () => { 
-			//this._doSomething() 
+			
 			this.element.classList.remove('animated', 'bounceOutLeft')
 			this.props.history.push("/About");
  			

@@ -19,7 +19,7 @@ export default class Content extends Component{
 			contentDescription:"A guitar repair website"
 		}
 		this.contentArray = [<FifthFrets />,<NewEden />, <CombatDB />];
-		this.contentDescription = ["A guitar repair website", "A florists", "A martial arts utility"]
+		//this.contentDescription = ["A guitar repair website", "A florists", "A martial arts utility"]
 	}
 
 	componentDidMount(){
@@ -76,12 +76,12 @@ export default class Content extends Component{
 
         	// record time when finger first makes contact with surface
         	startTime = new Date().getTime() 
-        	e.preventDefault()
+        	//e.preventDefault()
 		})
 
 		//prevent default for touch move
 		this.element.addEventListener('touchmove', (e)=>{
-			e.preventDefault();
+			//e.preventDefault();
 		})
 
 		//add listener for touch end
@@ -101,7 +101,7 @@ export default class Content extends Component{
 
 			//handle swipe
 			this._handleSwipe(swipeRightBool);
-			e.preventDefault();
+			//e.preventDefault();
 		})
  	}
 
@@ -151,13 +151,32 @@ export default class Content extends Component{
 		}
 		this.setState ({
 			content:this.contentArray[currentPos],
-			arrayPlace:currentPos,
-			contentDescription:this.contentDescription[currentPos]
+			arrayPlace:currentPos
+			
 		})
-		console.log(currentPos)
+		this._animateContent();
  	}
 
  	
+ 	_animateContent(){
+ 		//get content element
+ 		this.element =  document.querySelector('.sites');
+
+ 		//add bounceINRight class to content
+		this.element.classList.add('animated', 'fadeIn');
+
+		//set up listener for end of animation
+		this.element.addEventListener('animationend', () => { 
+			
+			//remove bounce content class
+			this.element.classList.remove('animated', 'fadeIn')
+
+			//remove listener
+        	this.element.removeEventListener('animationend', ()=>{})
+		})
+ 	}
+
+
 	render(){
 		
 		
@@ -168,14 +187,14 @@ export default class Content extends Component{
 			   		
 			   		<div className="row">
 			   			<div className="col-2">
-			   				<img id="left" onClick={this._rotateContent.bind(this)} className="pointer" src={require('../../Assets/Images/prev.png')} alt="previous content"/>
+			   				<span onClick={this._rotateContent.bind(this)} className="pointer"><img id="left"  src={require('../../Assets/Images/prev.png')} alt="previous content"/></span>
 			   			</div>
 			   			<div className="col-8 sites">
 							{this.state.content}
-							{this.state.contentDescription}
+							
 			   			</div>
 			   			<div className="col-2">
-			   				<img id="right" onClick={this._rotateContent.bind(this)} className="pointer" src={require('../../Assets/Images/next.png')} alt="next content" />
+			   				<span onClick={this._rotateContent.bind(this)} className="pointer"><img id="right"  src={require('../../Assets/Images/next.png')} alt="next content" /></span>
 			   			</div>
 			   		</div>
 			   		
