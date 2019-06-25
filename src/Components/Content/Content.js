@@ -6,6 +6,7 @@ import constants from '../../redux/constants';
 import FifthFrets from './FifthFrets';
 import NewEden from './NewEden';
 import CombatDB from './CombatDB';
+import AscentDB from './AscentDB';
 
 export default class Content extends Component{
 
@@ -18,7 +19,7 @@ export default class Content extends Component{
 			arrayPlace:0,
 			contentDescription:"A guitar repair website"
 		}
-		this.contentArray = [<FifthFrets />,<NewEden />, <CombatDB />];
+		this.contentArray = [<FifthFrets />,<NewEden />, <CombatDB />,<AscentDB />];
 		//this.contentDescription = ["A guitar repair website", "A florists", "A martial arts utility"]
 	}
 
