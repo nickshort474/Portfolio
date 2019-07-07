@@ -207,7 +207,9 @@ export default class Contact extends Component{
 		return(
 			<div className="container">
 				<div className="ContentContainer contactPage">
-					<p>You can contact me at: <span className="email">nickshort474@gmail.com</span></p>
+					<p>You can contact me at: <a id="emailLink" href="mailto:nickshort474@gmail.com">nickshort474@gmail.com</a></p>
+					<hr />
+					<p>Or you can <a href="https://api.whatsapp.com/send?phone=447766018206" id="whatsapp">Whatsapp</a> me	</p>
 					<hr />
 					<p>Or drop me a question with your contact details and I will get back to you:</p>
 					<hr />

@@ -10,6 +10,7 @@ export default class FifthFrets extends Component{
 				<a href="http://www.5thfrets.co.uk/" className="siteLinks">
 					<h5>5thFrets guitar repairs</h5>
 					<img src={require('../../Assets/Images/5thfretsSmall.png')} width="100%"  alt="website snaphot"/>
+					{this.props.img}
 					<br /><br />
 				</a>
 			</div>

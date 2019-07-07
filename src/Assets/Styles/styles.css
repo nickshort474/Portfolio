@@ -167,8 +167,26 @@ h1{
   font-family: 'Actor', sans-serif;
 }
 
-.email{
+#whatsapp{
+    color:limegreen;
+    font-weight:bold;
+}
+
+#whatsapp:hover{
+    text-decoration:none;
+    color:darkgreen;
+}
+
+#emailLink{
    font-family: 'Righteous', cursive;
+   color:white;
+   text-shadow:1px 1px 5px red;
+}
+
+#emailLink:hover{
+   text-decoration:none;
+   text-shadow:1px 1px 5px black;
+  
 }
 
 

@@ -21,6 +21,8 @@ import '../../Assets/Styles/styles.css';
 import 'animate.css';
 
 export default class App extends Component {
+	
+
 	render(){
 		return(
 			<Router>
