@@ -30,7 +30,6 @@ class Header extends Component{
 			
 			//get page from state
 			let page = store.getState().page;
-			console.log(page);
 			
 			let pageImg;
 
@@ -108,7 +107,7 @@ class Header extends Component{
 		return(
 			<div className="header">
 				<div className="row verticalAlign">
-
+					
 					<p id="leftElement" className="col-6 text-center pointer" onClick={this._goHome.bind(this)}>{this.state.backButtonText}</p>
 					<p id="rightElement" className="col-6 text-center">{this.state.page}</p>
 					

@@ -1,4 +1,6 @@
 
+/* Base styles  */
+
 html {
   position: relative;
   margin:0;
@@ -12,7 +14,7 @@ body {
   background-color:black;
   margin-bottom: 60px;
   margin:10px;
-  /*overflow:hidden-x;*/
+  
   height:100%;
  
 }
@@ -53,6 +55,9 @@ h1{
   max-width:750px;
 }
 
+
+/* Header   */
+
 .header{
   
   background-color:black;
@@ -68,29 +73,61 @@ h1{
   margin-top: 0px;
 }
 
-.siteBoxes{
-    background-color: rgba(255,255,255,0.2);
-    width:100%;
-    margin:0px;
+
+.verticalAlign{
+  display: flex;
+  align-items: center;
+  vertical-align: bottom;
+  float: none;
 }
 
-.formError{
-  border-color: red;
-  border-width: 2px;
-  border-style: solid;
+#leftElement{
+  color:white;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  
 }
+
+#leftElement:hover{
+  color:silver;
+  transition-duration: 0.5s;
+}
+
+#rightElement{
+  color:white;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  
+}
+
+#brandText{
+  font-family: 'Amatic SC', cursive;
+  font-weight:bold;
+  font-size:46px;
+  text-shadow: 3px 3px 5px silver;
+  transition-duration: 1s;
+
+}
+
+
+
+/* Home page  */
 
 
 .homeLinks{
   color:silver;
   margin-top:50px;
-  font-size: 28px;
-  font-weight: bold;
-  font-family: 'Rock Salt', cursive;
- 
+  font-size: 58px;
+  
+  
+  font-family: 'Amatic SC', cursive;
+  transition-duration: 1s;
 }
 
 .homeLinks:hover{
+
   color:dimgrey; 
   
 }
@@ -114,52 +151,36 @@ h1{
 
 }
 
-.verticalAlign{
-  display: flex;
-  align-items: center;
-  vertical-align: bottom;
-  float: none;
-}
-
-#leftElement{
-  color:white;
-  font-size: 19px;
-  font-weight: bold;
-  font-family: 'Oswald', sans-serif;
-  /*;*/
-}
-
-#leftElement:hover{
-  text-shadow: 2px 2px rgba(255,0,0,0.5);
-}
-
-#rightElement{
-  color:white;
-  font-size: 19px;
-  font-weight: bold;
-  font-family: 'Oswald', sans-serif;
-  /*text-shadow: 2px 2px rgba(255,0,0,0.3);*/
-}
 
 
 
+/* About me page */
 
 .About{
   font-size:16px;
   text-align: left;
   font-family: 'Actor', sans-serif;
-
-  
 }
 
 .profileImage{
-  
   width:100%;
   max-width:100px;
-
-  
 }
 
+
+#contactLink{
+   color:grey;
+   transition-duration: 1s;
+}
+
+#contactLink:hover{
+   color:red;
+   text-decoration:none;
+}
+
+
+
+/* Contact page */
 
 .contactPage{
   font-size:16px;
@@ -180,22 +201,29 @@ h1{
 #emailLink{
    font-family: 'Righteous', cursive;
    color:white;
-   text-shadow:1px 1px 5px red;
+   
 }
 
 #emailLink:hover{
    text-decoration:none;
-   text-shadow:1px 1px 5px black;
+   text-shadow:1px 1px 5px silver;
   
 }
 
+.formError{
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
+}
+
+
+
+/* Content page */
 
 .content{
   font-size:16px;
   font-family: 'Actor', sans-serif;
 }
-
-
 
 #left{
 
@@ -206,7 +234,6 @@ h1{
 #right{
   padding-top:100%;
   padding-left:70%;
-  
 }
 
 .siteLinks{
@@ -215,12 +242,16 @@ h1{
 
 .siteLinks:hover{
   text-decoration:none;
-  color:dimgrey;
+  color:silver;
 }
 
 .siteBox{
   border:1px solid white;
 }
+
+
+
+/* Footer styles */
 
 .footer{
   background-color:black;
@@ -233,8 +264,6 @@ h1{
 .footerLinks{
   color:grey;
   padding-left:15px;
-  
-  
 }
 
 .footerLinks:hover{
@@ -245,17 +274,3 @@ h1{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-.testClass{
-  width:500px;
-}

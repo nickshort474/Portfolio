@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import store from '../../redux/store';
 import constants from '../../redux/constants';
 
@@ -119,7 +120,7 @@ export default class About extends Component{
 							<p>I can develop the right product for you. Whether you need a basic website to advertise your business, something more complex which can handle your data needs, or maybe a progressive web app that can offer extended functionality.
 							 	I will cater a product to suit your budget and requirements.</p>
 							 <p>I know a whole host of different technologies each suited to different situations, allowing me to produce you just the right product within your budget.</p>
-							 <p>I live and work in Essex but am willing to travel to come and meet you for a cuppa and a chat. So why not get in touch to discuss what you need and how I can help you.</p>
+							 <p>I live and work in Essex but am willing to travel to come and meet you for a cuppa and a chat. So why not get in <Link to="/Contact" id="contactLink">contact</Link> to discuss what you need and how I can help you.</p>
 						</div>
 
 						<div className="col-sm-3 d-none d-sm-block text-center">

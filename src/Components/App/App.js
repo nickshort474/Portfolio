@@ -14,7 +14,7 @@ import Response from '../Response/Response';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
+/*import 'bootstrap/dist/js/bootstrap.min.js';*/
 
 import '../../Assets/Styles/styles.css';
 

@@ -7,8 +7,7 @@ export default class Brand extends Component{
 	render(){
 		return(
 			<div className="container text-center">
-				{/*<h2 className="brand">Nick Short Web Dev</h2>*/}
-				<img className="brand" src={require("../../Assets/Images/Brand.png")}	alt="my brand"/>
+				<h1 id="brandText">Nick Short Web Dev</h1>
 				<hr className="horizontalRule" />
 			</div>
 		)

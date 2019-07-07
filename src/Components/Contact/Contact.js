@@ -234,7 +234,7 @@ export default class Contact extends Component{
 
 					</form>
 					<div className="text-center">
-						<button type="submit" onClick={this._onSubmit.bind(this)}>Contact me</button>
+						<button type="submit" onClick={this._onSubmit.bind(this)} className="btn btn-light" id="contactButton">Contact me</button>
 					</div>
 					<br /><br />
 					<div>
