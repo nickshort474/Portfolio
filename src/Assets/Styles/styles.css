@@ -264,6 +264,7 @@ h1{
 .footerLinks{
   color:grey;
   padding-left:15px;
+  transition:1s;
 }
 
 .footerLinks:hover{
