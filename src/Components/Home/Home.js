@@ -50,9 +50,18 @@ export default class Home extends Component{
  		
  	}
 
- 	_addToHome(){
+ 	_clickBlog(){
+ 		this.element.classList.add('animated','bounceOutLeft');
+ 		this.element.addEventListener('animationend', () => { 
+			
+			this.element.classList.remove('animated', 'bounceOutLeft')
+			this.props.history.push("/Blog");
+ 			
+		})
  		
  	}
+
+ 	
 
 	render(){
 		return(
@@ -72,6 +81,9 @@ export default class Home extends Component{
 					<div className="row">
 						<span className="pointer col-12 homeLinks" onClick={this._clickContact.bind(this)}>Contact me <img className="homeIcon3" alt="email icon" src={require('../../Assets/Images/icons/email2.png')} /></span>
 					</div>
+					{/*<div className="row">
+						<span className="pointer col-12 homeLinks" onClick={this._clickBlog.bind(this)}>My Blog </span>
+					</div>*/}
 					
 				</div>
 			</div>

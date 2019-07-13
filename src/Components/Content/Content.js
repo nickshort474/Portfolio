@@ -15,26 +15,19 @@ export default class Content extends Component{
 	constructor(){
 		super();
 
+		this.contentArray = [ <CombatDB />,<WiredAudio />,<FifthFrets />,<AscentDB />,<NewEden />];
+		
 		this.state = {
-			content:<FifthFrets />,
-			arrayPlace:0,
-			contentDescription:"A guitar repair website"
+			content:this.contentArray[0],
+			arrayPlace:0
+			
 		}
-		this.pictures = ['../../Assets/Images/5thfretsSmall.png','../../Assets/Images/CombatDBSmall.png','../../Assets/Images/NewEdenSmall.png','../../Assets/Images/AscentDB.png'];
-		
-		
-		this.contentArray = [<FifthFrets />,<NewEden />, <CombatDB />,<AscentDB />,<WiredAudio />];
-		//this.contentDescription = ["A guitar repair website", "A florists", "A martial arts utility"]
+				
 	}
 
 	componentDidMount(){
 
-		this.pictures.forEach((picture)=>{
-			const img = new Image();
-			img.src = picture;
-		})
-
-		//save page to store
+				//save page to store
 		store.dispatch({type:constants.SAVE_PAGE, page:'My creations'})
 
 		// get ref to content container
@@ -206,7 +199,7 @@ export default class Content extends Component{
 			   			</div>
 			   		</div>
 			   		
-			   		<p>{this.fifthFretsImage} </p>
+			   		
 			    </div>
 			</div>	
 				
