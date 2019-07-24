@@ -187,14 +187,14 @@ export default class Content extends Component{
 			    <div className="ContentContainer content">
 			   		
 			   		<div className="row">
-			   			<div className="col-2">
+			   			<div className="col-1">
 			   				<span onClick={this._rotateContent.bind(this)} className="pointer"><img id="left"  src={require('../../Assets/Images/prev.png')} alt="previous content"/></span>
 			   			</div>
-			   			<div className="col-8 sites">
+			   			<div className="col-10 sites">
 							{this.state.content}
 							
 			   			</div>
-			   			<div className="col-2">
+			   			<div className="col-1">
 			   				<span onClick={this._rotateContent.bind(this)} className="pointer"><img id="right"  src={require('../../Assets/Images/next.png')} alt="next content" /></span>
 			   			</div>
 			   		</div>

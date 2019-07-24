@@ -19,8 +19,10 @@ body {
 }
 
 #app{
-  
-   background-image:linear-gradient(to bottom,black, black, dimgrey);
+   background-image: url('../Images/backgrounds/seven.jpg');
+   background-attachment: fixed;
+   font-family: 'Reem Kufi', sans-serif;
+   background-repeat: no-repeat;
    min-height:100%;
    margin-bottom: 45px;
 }
@@ -43,22 +45,18 @@ h1{
     margin:10px 0px;
     text-align: center;
     height:100%;
+    
 }
 
 
 
 .container{
   max-width:750px;
-
+ 
 }
 
 
 /* Header   */
-
-.header{
-  
-  background-color:black;
- }
 
 .brand{
   width:100%;
@@ -76,18 +74,19 @@ h1{
   align-items: center;
   vertical-align: bottom;
   float: none;
+
 }
 
 #leftElement{
   color:white;
   font-size: 19px;
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
   
+  transition: 1s;
 }
 
 #leftElement:hover{
-  color:silver;
+  color:red;
   transition-duration: 0.5s;
 }
 
@@ -95,15 +94,15 @@ h1{
   color:white;
   font-size: 19px;
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
+  
   
 }
 
 #brandText{
-  font-family: 'Amatic SC', cursive;
+  
+  font-family: 'Reem Kufi', sans-serif;
   font-weight:bold;
-  font-size:46px;
-  text-shadow: 3px 3px 5px silver;
+  font-size:38px;
   transition-duration: 1s;
  
 
@@ -118,15 +117,15 @@ h1{
   color:silver;
   margin-top:50px;
   font-size: 58px;
+  text-shadow: 1px 1px 2px black;
   
-  
-  font-family: 'Amatic SC', cursive;
   transition-duration: 1s;
 }
 
 .homeLinks:hover{
 
-  color:dimgrey; 
+  color:dimgrey;
+  
   
 }
 
@@ -145,7 +144,7 @@ h1{
 
 .Greeting{
   font-size:16px;
-  font-family: 'Actor', sans-serif;
+  
 
 }
 
@@ -155,15 +154,19 @@ h1{
 /* About me page */
 
 .About{
-  font-size:16px;
+  font-size:18px;
   text-align: left;
-  font-family: 'Actor', sans-serif;
+  text-shadow: 2px 2px 2px black;
+  
 }
 
 .profileImage{
   width:100%;
   max-width:100px;
+  float:right;
+  padding:5px;
 }
+
 
 
 #contactLink{
@@ -181,30 +184,32 @@ h1{
 /* Contact page */
 
 .contactPage{
-  font-size:16px;
+  font-size:18px;
   text-align: justify;
-  font-family: 'Actor', sans-serif;
+  /* font-family: 'Actor', sans-serif; */
 }
 
 #whatsapp{
-    color:limegreen;
+    color:white;
     font-weight:bold;
+    transition:1s;
 }
 
 #whatsapp:hover{
     text-decoration:none;
-    color:darkgreen;
+    color:red;
 }
 
 #emailLink{
-   font-family: 'Righteous', cursive;
+  
    color:white;
+   transition: 1s;
    
 }
 
 #emailLink:hover{
    text-decoration:none;
-   text-shadow:1px 1px 5px silver;
+   color:red;
   
 }
 
@@ -214,24 +219,42 @@ h1{
   border-style: solid;
 }
 
+#contactButton{
+  background-color: grey;
+  color:white;
+  transition:1s;
+}
+
+#contactButton:hover{
+  background-color:red;
+  
+}
 
 
 /* Content page */
 
 .content{
   font-size:16px;
-  font-family: 'Actor', sans-serif;
+ /*  font-family: 'Actor', sans-serif; */
+  line-height:22px;
+  text-shadow: 1px 1px 2px black;
 }
 
 #left{
-
+  /* position:relative; */
   padding-top:100%;
-  padding-right:100%;
+ 
+  top:30%;
 }
 
 #right{
+ /*  position:relative; */
   padding-top:100%;
-  padding-left:70%;
+  top:30%;
+}
+
+.col-1{
+  padding:5px;
 }
 
 .siteLinks{
@@ -240,7 +263,8 @@ h1{
 
 .siteLinks:hover{
   text-decoration:none;
-  color:silver;
+  color:white;
+
 }
 
 .siteBox{
@@ -249,10 +273,43 @@ h1{
 
 
 
+
+.hidden{
+  visibility: hidden;
+ 
+}
+
+.visible{
+  visibility: visible;
+   
+}
+
+@media screen and (max-width:480px){
+
+  .hidden{
+    
+    visibility: visible;
+   
+  }
+  .content{
+    font-size:14px;
+    line-height:18px;
+    /* font-family: 'Actor', sans-serif;
+    
+    text-shadow: 1px 1px 2px black; */
+  }
+
+
+
+}
+
+
+
 /* Footer styles */
 
 .footer{
   background-color:black;
+  font-size:16px;
   position:fixed;
   height:30px;
   width:100%;
