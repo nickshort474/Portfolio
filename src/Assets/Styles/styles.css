@@ -13,7 +13,8 @@ body {
   color:dimgrey;
   background-color:black;
   margin-bottom: 45px;
-  height:100%; 
+  height:90%; 
+  overflow-x:hidden; 
   
  
 }
