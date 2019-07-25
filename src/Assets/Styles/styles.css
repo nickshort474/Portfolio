@@ -285,24 +285,7 @@ h1{
    
 }
 
-@media screen and (max-width:480px){
 
-  .hidden{
-    
-    visibility: visible;
-   
-  }
-  .content{
-    font-size:14px;
-    line-height:18px;
-    /* font-family: 'Actor', sans-serif;
-    
-    text-shadow: 1px 1px 2px black; */
-  }
-
-
-
-}
 
 
 
@@ -332,4 +315,35 @@ h1{
 
 .blogComp{
   background-color:red;
+}
+
+
+/* Mobile styles tweaks */
+
+@media screen and (max-width:480px){
+
+  #brandText{
+      font-size:22px;
+  }
+
+  .homeLinks{
+    margin-top:12px;
+    font-size:38px;
+  }
+
+  .hidden{
+    
+    visibility: visible;
+   
+  }
+  .content{
+    font-size:14px;
+    line-height:18px;
+    /* font-family: 'Actor', sans-serif;
+    
+    text-shadow: 1px 1px 2px black; */
+  }
+
+
+
 }
