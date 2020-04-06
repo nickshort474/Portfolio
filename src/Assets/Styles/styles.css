@@ -21,7 +21,6 @@ body {
 
 #app{
    background-image: url('../Images/backgrounds/seven.jpg');
-   background-attachment: fixed;
    font-family: 'Reem Kufi', sans-serif;
    background-repeat: no-repeat;
    min-height:100%;
@@ -31,8 +30,8 @@ body {
 
 
 h1{
-  color:white;
-  background-color:rgba(0,0,0,0.2);
+    color:white;
+    background-color:rgba(0,0,0,0.2);
 }
 
 .pointer{
@@ -60,51 +59,54 @@ h1{
 /* Header   */
 
 .brand{
-  width:100%;
-  max-width:400px;
+    width:100%;
+    max-width:400px;
 }
 
 .horizontalRule{
-  border-top:1px solid dimgrey;
-  margin-top: 0px;
+    border-top:1px solid dimgrey;
+    margin-top: 0px;
 }
 
 
 .verticalAlign{
-  display: flex;
-  align-items: center;
-  vertical-align: bottom;
-  float: none;
+    display: flex;
+    align-items: center;
+    vertical-align: bottom;
+    float: none;
 
 }
 
 #leftElement{
-  color:white;
-  font-size: 19px;
-  font-weight: bold;
-  
-  transition: 1s;
+    color:white;
+    font-size: 19px;
+    font-weight: bold;
+    transition: 0.5s;
 }
 
 #leftElement:hover{
-  color:red;
-  transition-duration: 0.5s;
+    color:red;
+    
+}
+
+#leftElement:active{
+    transform: translate(0px,5px);
 }
 
 #rightElement{
-  color:white;
-  font-size: 19px;
-  font-weight: bold;
+    color:white;
+    font-size: 19px;
+    font-weight: bold;
   
   
 }
 
 #brandText{
   
-  font-family: 'Reem Kufi', sans-serif;
-  font-weight:bold;
-  font-size:38px;
-  transition-duration: 1s;
+    font-family: 'Reem Kufi', sans-serif;
+    font-weight:bold;
+    font-size:38px;
+    transition-duration: 1s;
  
 
 }
@@ -115,36 +117,42 @@ h1{
 
 
 .homeLinks{
-  color:silver;
-  margin-top:50px;
-  font-size: 58px;
-  text-shadow: 1px 1px 2px black;
-  
-  transition-duration: 1s;
+    color:silver;
+    margin-top:50px;
+    font-size: 58px;
+    text-shadow: 1px 1px 2px black;
+    transition-duration: 0.5s;
 }
 
 .homeLinks:hover{
 
-  color:dimgrey;
+    color:dimgrey;
+  
+  
+}
+
+.homeLinks:active{
+
+    transform:translate(0px,5px);
   
   
 }
 
 .homeIcon1{
     padding-top:5px;
-   padding-left:15px;
+    padding-left:15px;
 }
 
 .homeIcon2{
-   padding-right:15px;
+    padding-right:15px;
 }
 
 .homeIcon3{
-   padding-left:15px;
+    padding-left:15px;
 }
 
 .Greeting{
-  font-size:16px;
+    font-size:16px;
   
 
 }
@@ -155,29 +163,29 @@ h1{
 /* About me page */
 
 .About{
-  font-size:18px;
-  text-align: left;
-  text-shadow: 2px 2px 2px black;
+    font-size:18px;
+    text-align: left;
+    text-shadow: 2px 2px 2px black;
   
 }
 
 .profileImage{
-  width:100%;
-  max-width:100px;
-  float:right;
-  padding:5px;
+    width:100%;
+    max-width:100px;
+    float:right;
+    padding:5px;
 }
 
 
 
 #contactLink{
-   color:grey;
-   transition-duration: 1s;
+    color:grey;
+    transition-duration: 1s;
 }
 
 #contactLink:hover{
-   color:red;
-   text-decoration:none;
+    color:red;
+    text-decoration:none;
 }
 
 
@@ -185,9 +193,9 @@ h1{
 /* Contact page */
 
 .contactPage{
-  font-size:18px;
-  text-align: justify;
-  /* font-family: 'Actor', sans-serif; */
+    font-size:18px;
+    text-align: justify;
+  
 }
 
 #whatsapp{
@@ -235,53 +243,65 @@ h1{
 /* Content page */
 
 .content{
-  font-size:16px;
- /*  font-family: 'Actor', sans-serif; */
-  line-height:22px;
-  text-shadow: 1px 1px 2px black;
+    font-size:16px;
+    line-height:22px;
+    text-shadow: 1px 1px 2px black;
 }
 
 #left{
-  /* position:relative; */
-  padding-top:100%;
- 
-  top:30%;
+  
+    padding-top:100%;
+    top:30%;
+    transition:0.5s;
 }
 
 #right{
- /*  position:relative; */
-  padding-top:100%;
-  top:30%;
+ 
+    padding-top:100%;
+    top:30%;
+    transition:0.5s;
+
 }
 
+#left:active{
+  
+    transform: translate(0px,5px);
+}
+
+#right:active{
+ 
+    transform: translate(0px,5px);
+}
+
+
 .col-1{
-  padding:5px;
+    padding:5px;
 }
 
 .siteLinks{
-  color:white;
+    color:white;
 }
 
 .siteLinks:hover{
-  text-decoration:none;
-  color:white;
+    text-decoration:none;
+    color:white;
 
 }
 
 .siteBox{
-  border:1px solid white;
+    border:1px solid white;
 }
 
 
 
 
 .hidden{
-  visibility: hidden;
+    visibility: hidden;
  
 }
 
 .visible{
-  visibility: visible;
+    visibility: visible;
    
 }
 
@@ -292,18 +312,18 @@ h1{
 /* Footer styles */
 
 .footer{
-  background-color:black;
-  font-size:16px;
-  position:fixed;
-  height:30px;
-  width:100%;
-  bottom:0px;
+    background-color:black;
+    font-size:16px;
+    position:fixed;
+    height:30px;
+    width:100%;
+    bottom:0px;
 }
 
 .footerLinks{
-  color:grey;
-  padding-left:15px;
-  transition:1s;
+    color:grey;
+    padding-left:15px;
+    transition:1s;
 }
 
 .footerLinks:hover{
@@ -327,21 +347,19 @@ h1{
   }
 
   .homeLinks{
-    margin-top:12px;
-    font-size:38px;
+      margin-top:12px;
+      font-size:38px;
   }
 
   .hidden{
     
-    visibility: visible;
+      visibility: visible;
    
   }
   .content{
-    font-size:14px;
-    line-height:18px;
-    /* font-family: 'Actor', sans-serif;
-    
-    text-shadow: 1px 1px 2px black; */
+      font-size:14px;
+      line-height:18px;
+  
   }
 
 

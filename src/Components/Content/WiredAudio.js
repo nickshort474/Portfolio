@@ -21,13 +21,13 @@ export default class WiredAudio extends Component{
 	render(){
 		return(
 			<div  className="container">
-				<a href="http://wiredaudiorecording.atwebpages.com/" id="siteContainer" className="siteLinks" onMouseOver={this._displayInfo.bind(this)} onMouseOut={this._hideInfo.bind(this)}>
+				<a href="https://www.wiredaudiorecording.co.uk/" id="siteContainer" className="siteLinks" onMouseOver={this._displayInfo.bind(this)} onMouseOut={this._hideInfo.bind(this)}>
 					<h5>Wired Audio Recording</h5>
 					<img src={require('../../Assets/Images/WiredAudioSmall.jpg')}  className="siteBox" width="100%"  alt="website snaphot"/>
 					
 					<br />
 					<br />
-					<span  id="description">A sound hire and audio enginnering website <br />Built with ReactJS, JSX, <br />Boostrap and CSS</span>
+					<span  id="description">A redesign of an existing sound hire and audio enginnering website using Wix.</span>
 				</a>
 			</div>
 		)

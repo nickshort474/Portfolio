@@ -8,6 +8,7 @@ import NewEden from './NewEden';
 import CombatDB from './CombatDB';
 import AscentDB from './AscentDB';
 import WiredAudio from './WiredAudio';
+import PeopleFinder from './PeopleFinder';
 
 export default class Content extends Component{
 
@@ -15,7 +16,7 @@ export default class Content extends Component{
 	constructor(){
 		super();
 
-		this.contentArray = [ <CombatDB />,<WiredAudio />,<FifthFrets />,<AscentDB />,<NewEden />];
+		this.contentArray = [ <CombatDB />,<PeopleFinder />,<WiredAudio />,<FifthFrets />,<AscentDB />,<NewEden />];
 		
 		this.state = {
 			content:this.contentArray[0],
