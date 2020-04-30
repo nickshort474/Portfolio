@@ -5,7 +5,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.14",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
